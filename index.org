@@ -1,0 +1,280 @@
+#+MACRO: color @@html:<font color="$1">$2</font>@@
+#+MACRO: fa @@html:<i class="fa $1" style="color:var(--r-link-color);"></i>@@
+#+MACRO: fa-cust @@html:<i class="fa $1" style="color:$2; font-size:$3"></i>@@
+#+MACRO: toppic @@html:<img class="r-stretch" src="$1">@@
+#+MACRO: column #+REVEAL_HTML: <div class="column $1" style="float: $2; width:$3">
+#+MACRO: div-end #+REVEAL_HTML: </div>
+#+MACRO: class #+ATTR_HTML: :class $1
+#+MACRO: html #+REVEAL_HTML: $1
+
+#+options: timestamp:nil ^:{}
+#+Title: Tarea 1: Instalación de programas
+#+Author: Saul Sotomayor Leyton
+#+Date: 2024-05-01
+
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@5.1.0
+#+REVEAL_HLEVEL: 2
+#+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Instalación de programas">
+#+REVEAL_POSTAMBLE: <p>Creado por ssl</p>
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, minScale:0.2, maxScale:2.5, transition: 'fade', progress:true, history:true, center:true, mouseWheel:false, menu:{themes:true, themesPath:'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/', transitions:true, markers:true, custom: false, hideMissingTitles:true}, customcontrols:{controls:[{id:'toggle-overview', title:'Toggleoverview(O)', icon:'<i class="fa fa-th"></i>', action:'Reveal.toggleOverview();'}, {icon:'<i class="fa fa-message"></i>', title:'Toggle iframe legend', action:'ilegend()'}]}, pointer: {key: "q", color: "red", pointerSize: 16, alwaysVisible: false, tailLength: 10}
+#+REVEAL_THEME: dracula
+#+OPTIONS: num:nil toc:nil
+
+#+REVEAL_EXTRA_CSS: ./plugin_extra/customcontrols/style.css
+#+REVEAL_EXTRA_CSS: ./personal/css/icustom.css
+#+REVEAL_EXTRA_CSS: ./plugin_extra/drawer/drawer.css
+#+REVEAL_EXTRA_CSS: ./plugin_extra/pointer/pointer.css
+#+REVEAL_EXTRA_CSS: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
+#+REVEAL_EXTERNAL_PLUGINS: (RevealMenu . "./plugin_extra/menu/menu.js") 
+#+REVEAL_EXTERNAL_PLUGINS: (RevealCustomControls . "./plugin_extra/customcontrols/plugin.js")
+#+REVEAL_EXTERNAL_PLUGINS: (RevealDrawer . "./plugin_extra/drawer/drawer.js")
+#+REVEAL_EXTERNAL_PLUGINS: (RevealPointer . "./plugin_extra/pointer/pointer.js")
+#+REVEAL_PLUGINS: (notes zoom highlight RevealMenu RevealCustomControls RevealPointer RevealDrawer)
+#+REVEAL_EXTRA_SCRIPT_SRC: ./personal/js/icustom.js
+* Contenido
+** Contenido
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly
+#+begin_dFlex-col
+- Instalación de miniconda
+  - Linux
+- Creación de entornos virtuales
+  - =rnaseq_map= (Mapeo de secuencias)
+  - =rnaseq_r= (Visualización de resultados)
+- Instalación de librerias en R
+  - Instalación de =bioconductor=
+  - Solución de problemas 
+- Verificar la instalación
+  - Confirmar la disponibilidad de programas y librerías
+#+end_dFlex-col
+* Anaconda y miniconda
+** Descripción
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+#+begin_quote
+=Anaconda= es una distribución de los lenguajes =Python= y =R= para  aplicaciones  científicas/investigación /e.g./, ciencia de datos, machine learning o bioinformática. El último mediante la adición de  fuentes (/canales/) específicos
+#+end_quote
+- =Miniconda= es una versión reducida de =Anaconda= que solo cuenta con paquetes esenciales (menos uso de disco)
+  - Programas adicionales pueden ser instalados posteriormente
+#+end_dFlex-col
+
+** Instalación
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+#+begin_quote
+Instrucciones [Inglés]
+https://docs.anaconda.com/free/miniconda/miniconda-install/
+#+end_quote
+- Instalador windows: https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe
+- Instalador linux: https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+#+end_dFlex-col 
+* Creación de entornos virtuales
+** Descripción
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+#+begin_quote
+Un entorno virtual puede ser definido como un directorio que aísla una instalación particular de Python incluidas sus dependencias y paquetes asociados
+#+end_quote
+- El uso de entornos virtuales permite:
+  - Tener varias versiones de programas
+  - Entornos reproducibles
+  - Sistema más organizado (Instalación, desinstalación)
+#+end_dFlex-col
+** Canales de paquetes
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+#+begin_quote
+Un /canal/ indica al administrador de paquetes el lugar donde encontrar librerias/programas. Un ejemplo es el canal =bioconda= el cual almacena paquetes relacionados a las ciencias biomédicas. Otro es =conda-forge= el cual está dirigido por la comunidad de usuarios 
+#+end_quote
+
+- En la línea de comandos ejecutar:
+#+begin_src bash
+  # Añade el canal por defecto (defaults) a la lista de canales
+  conda config --add channels defaults
+
+  # Añade el canal bioconda a la lista de canales
+  conda config --add channels bioconda
+
+  # Añade el canal conda-forge a la lista de canales
+  conda config --add channels conda-forge
+#+end_src
+
+  # Indicar se respete el orden de paquetes (mayor consistencia)
+  # conda config --set channel_priority strict
+#+end_dFlex-col
+** Creación de entornos virtuales
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+- Se crearán 2 entornos,
+  - =rnaseq_map=: Orientado al mapeo de sequencias de RNA
+  - =rnaseq_r=: Orientado principalmente a la visualización de resultados
+
+- En la línea de comandos ejecutar:
+#+begin_src bash
+  # Creación del entorno mi_entorno
+  conda create --name mi_entorno python=3.x -y
+
+  # Activar el entorno
+  conda activate mi_entorno
+
+  # Instalación de paquetes desde un canal específico
+  conda install -c mi_canal mi_paquete -y
+#+end_src
+#+end_dFlex-col
+*** Creación de entornos virtuales (Cont.)
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-centered text-md
+#+begin_dFlex-col
+- En la línea de comandos ejecutar:
+  #+begin_src bash
+    # Creación del entorno rnaseq_map y activación
+    conda create --name rnaseq_map python=3.11 -y
+    conda activate rnaseq_map
+
+    # Instalación de paquetes
+    conda install -c conda-forge pigz -y
+    conda install -c bioconda entrez-direct fastqc fastp stringtie gffcompare hisat2 subread samtools -y
+
+    # Desactivar el entorno rnaseq_map
+    conda deactivate
+
+    # Creación del entorno rnaseq_r y activación
+    conda create --name rnaseq_r python=3.11 -y
+    conda activate rnaseq_r
+
+    # Instalación de paquetes
+    conda install -c anaconda libxml2 -y
+    conda install -c conda-forge pkg-config=0.29.2 r-curl=5.1.0 r-base=4.3.3 -y
+
+    # Desactivar el entorno rnaseq_map
+    conda deactivate
+    #+end_src
+#+end_dFlex-col
+* Instalación de librerias en =R=
+** Instalación de =bioconductor=
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+#+begin_quote
+=bioconductor= es un repositorio de paquetes (/librerias/) orientados al análisis bioinformático.
+#+end_quote
+
+- La versión a instalarse depende de la versión de =R= (=r-base=) que se tenga instalada
+- Aún así es posible que algunas librerias no puedan ser instaladas
+- En una sesión de R (=rnaseq_r=) ejecutar
+  #+begin_src R
+    ## Instalar Bioconductor (Nota la versión)
+    if (!require("BiocManager", quietly = TRUE))
+      install.packages("BiocManager")
+    BiocManager::install(version = "3.18")
+
+    ## Crear una lista de librerias a instalar
+    ipackages <- c("DESeq2","vsn", "ggplot2","tidyverse","devtools", "ballgown", "genefilter")
+    ## Instalar la lista con el administrador de paquetes de Bioconductor
+    BiocManager::install(ipackages)
+  #+end_src
+#+end_dFlex-col
+** Solución de problemas
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+#+begin_quote
+El 26 de abril 2024 se publicó una nueva versión de la librería =MASS= la cual requiere la versión de =R= ==>4.4.0=. Sin embargo la versión más actual que se encuentra en anaconda es =4.3.0=. Como esta librería es requerida es necesario instalar una versión anterior (Incluidas otras dependencias)
+#+end_quote
+- Obtener la dirección =url= de una versión anterior y específica de la librería (=lbr=)
+  - Buscar la librería (por nombre): https://cran.r-project.org/web/packages/available_packages_by_name.html
+  - Buscar la versión en:  https://cran.r-project.org/src/contrib/Archive/lbr
+    - Ej. https://cran.r-project.org/src/contrib/Archive/MASS
+- Para solucionar el problema anterior es necesario instalar las siguientes librerías:
+#+ATTR_HTML: :class dFlex-row
+  - MASS
+  - Matrix
+  - lattice
+ #+end_dFlex-col
+*** Instalación de paquetes antiguos en R
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+- En una sesión de R ejecutar el siguiente comando especificando la librería (=<libreria>=) y la versión (=<version>=) a instalar
+#+begin_src R
+  lbr_url="https://cran.r-project.org/src/contrib/Archive/<libreria>/<libreria>_<version>.tar.gz"
+  install.packages(lbr_url, repos=NULL, type="source")
+#+end_src
+- Para simplificar en caso de varias librerías
+#+begin_src R
+    librerias <- c("https://cran.r-project.org/src/contrib/Archive/MASS/MASS_7.3-60.0.1.tar.gz",
+                   "https://cran.r-project.org/src/contrib/Archive/lattice/lattice_0.22-5.tar.gz",
+                   "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz")
+    for (lbr_url in librerias) {
+      install.packages(lbr_url, repos=NULL, type="source")
+    }
+#+end_src
+#+end_dFlex-col
+* Verificar la instalación
+** Confirmar que los programas y librerias están disponibles
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+- En la linea de comandos activar el entorno y listar un programa determinado
+  #+begin_src bash
+    conda activate rnaseq_map
+    # Hacer una lista de paquetes y buscar 'subread' [Existe]
+    conda list | grep subread
+
+    # Hacer una lista de paquetes y buscar 'bowtie2' [NO Existe]
+    conda list | grep bowtie2
+  #+end_src
+  
+- En una sesión de =R= cargar las librerias
+    #+begin_src R
+      ## Cargar la libreria 'MASS' [Existe]
+      library("MASS")
+
+      ## Cargar la libreria 'biomaRt' [NO Existe]
+      library("biomaRt")
+
+      ## Verificar la versión de la libreria MASS
+      packageVersion("MASS")
+    #+end_src
+#+end_dFlex-col
+* Recursos en línea
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
+- Bioconductor: https://www.bioconductor.org/
+- Anaconda
+  - Administración de canales: https://docs.anaconda.com/free/navigator/tutorials/manage-channels/
+  - Bioconda: https://bioconda.github.io/
+  - Conda-Forge: https://conda-forge.org/
+- R
+  - Instalar paquetes antiguos R: https://stackoverflow.com/questions/17082341/installing-older-version-of-r-package#17082609
+#+end_dFlex-col

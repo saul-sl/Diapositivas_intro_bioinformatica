@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Tarea 1: Instalación de programas</title>
+<meta name="author" content="Saul Sotomayor Leyton"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/dracula.css" id="theme"/>
+
+<link rel="stylesheet" href="./plugin_extra/customcontrols/style.css"/>
+
+<link rel="stylesheet" href="./personal/css/icustom.css"/>
+
+<link rel="stylesheet" href="./plugin_extra/drawer/drawer.css"/>
+
+<link rel="stylesheet" href="./plugin_extra/pointer/pointer.css"/>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/zenburn.css"/><meta name="description" content="Instalación de programas">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Tarea 1: Instalación de programas</h1><p class="subtitle"></p>
+<h2 class="author">Saul Sotomayor Leyton</h2><h2 class="date">2024-05-01</h2>
+</section>
+<section>
+<section id="slide-orgabb3f16">
+<h2 id="orgabb3f16">Contenido</h2>
+<div class="outline-text-2" id="text-orgabb3f16">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org68f0e4a" class="stretch">
+<h3 id="org68f0e4a">Contenido</h3>
+<div class="content-size dFlex-evenly dFlex-col" id="orga0d9be4">
+<ul>
+<li>Instalación de miniconda
+<ul>
+<li>Linux</li>
+
+</ul></li>
+<li>Creación de entornos virtuales
+<ul>
+<li><code>rnaseq_map</code> (Mapeo de secuencias)</li>
+<li><code>rnaseq_r</code> (Visualización de resultados)</li>
+
+</ul></li>
+<li>Instalación de librerias en R
+<ul>
+<li>Instalación de <code>bioconductor</code></li>
+<li>Solución de problemas</li>
+
+</ul></li>
+<li>Verificar la instalación
+<ul>
+<li>Confirmar la disponibilidad de programas y librerías</li>
+
+</ul></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgac2c5fb">
+<h2 id="orgac2c5fb">Anaconda y miniconda</h2>
+<div class="outline-text-2" id="text-orgac2c5fb">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org776ea14" class="stretch">
+<h3 id="org776ea14">Descripción</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org066fe1b">
+<blockquote >
+<p>
+<code>Anaconda</code> es una distribución de los lenguajes <code>Python</code> y <code>R</code> para  aplicaciones  científicas/investigación <i>e.g.</i>, ciencia de datos, machine learning o bioinformática. El último mediante la adición de  fuentes (<i>canales</i>) específicos
+</p>
+</blockquote>
+<ul>
+<li><code>Miniconda</code> es una versión reducida de <code>Anaconda</code> que solo cuenta con paquetes esenciales (menos uso de disco)
+<ul>
+<li>Programas adicionales pueden ser instalados posteriormente</li>
+
+</ul></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orga261667" class="stretch">
+<h3 id="orga261667">Instalación</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org3f15134">
+<blockquote >
+<p>
+Instrucciones [Inglés]
+<a href="https://docs.anaconda.com/free/miniconda/miniconda-install/">https://docs.anaconda.com/free/miniconda/miniconda-install/</a>
+</p>
+</blockquote>
+<ul>
+<li>Instalador windows: <a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe">https://repo.anaconda.com/miniconda/Miniconda3-latest-Windows-x86_64.exe</a></li>
+<li>Instalador linux: <a href="https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh">https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh</a></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org096c94e">
+<h2 id="org096c94e">Creación de entornos virtuales</h2>
+<div class="outline-text-2" id="text-org096c94e">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org04c404f" class="stretch">
+<h3 id="org04c404f">Descripción</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org8983b49">
+<blockquote >
+<p>
+Un entorno virtual puede ser definido como un directorio que aísla una instalación particular de Python incluidas sus dependencias y paquetes asociados
+</p>
+</blockquote>
+<ul>
+<li>El uso de entornos virtuales permite:
+<ul>
+<li>Tener varias versiones de programas</li>
+<li>Entornos reproducibles</li>
+<li>Sistema más organizado (Instalación, desinstalación)</li>
+
+</ul></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6387ab3" class="stretch">
+<h3 id="org6387ab3">Canales de paquetes</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orga07c357">
+<blockquote >
+<p>
+Un <i>canal</i> indica al administrador de paquetes el lugar donde encontrar librerias/programas. Un ejemplo es el canal <code>bioconda</code> el cual almacena paquetes relacionados a las ciencias biomédicas. Otro es <code>conda-forge</code> el cual está dirigido por la comunidad de usuarios 
+</p>
+</blockquote>
+
+<ul>
+<li>En la línea de comandos ejecutar:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre   ><code class="bash" ># Añade el canal por defecto (defaults) a la lista de canales
+conda config --add channels defaults
+
+# Añade el canal bioconda a la lista de canales
+conda config --add channels bioconda
+
+# Añade el canal conda-forge a la lista de canales
+conda config --add channels conda-forge
+</code></pre>
+</div>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6a7112a" class="stretch">
+<h3 id="org6a7112a">Creación de entornos virtuales</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgcccdfdb">
+<ul>
+<li>Se crearán 2 entornos,
+<ul>
+<li><code>rnaseq_map</code>: Orientado al mapeo de sequencias de RNA</li>
+<li><code>rnaseq_r</code>: Orientado principalmente a la visualización de resultados</li>
+
+</ul></li>
+
+<li>En la línea de comandos ejecutar:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre   ><code class="bash" ># Creación del entorno mi_entorno
+conda create --name mi_entorno python=3.x -y
+
+# Activar el entorno
+conda activate mi_entorno
+
+# Instalación de paquetes desde un canal específico
+conda install -c mi_canal mi_paquete -y
+</code></pre>
+</div>
+
+</div>
+</section>
+<section id="slide-org486a6ea" class="stretch">
+<h4 id="org486a6ea">Creación de entornos virtuales (Cont.)</h4>
+<div class="content-size dFlex-centered text-md dFlex-col" id="org9c6c5a9">
+<ul>
+<li><p>
+En la línea de comandos ejecutar:
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="bash" ># Creación del entorno rnaseq_map y activación
+conda create --name rnaseq_map python=3.11 -y
+conda activate rnaseq_map
+
+# Instalación de paquetes
+conda install -c conda-forge pigz -y
+conda install -c bioconda entrez-direct fastqc fastp stringtie gffcompare hisat2 subread samtools -y
+
+# Desactivar el entorno rnaseq_map
+conda deactivate
+
+# Creación del entorno rnaseq_r y activación
+conda create --name rnaseq_r python=3.11 -y
+conda activate rnaseq_r
+
+# Instalación de paquetes
+conda install -c anaconda libxml2 -y
+conda install -c conda-forge pkg-config=0.29.2 r-curl=5.1.0 r-base=4.3.3 -y
+
+# Desactivar el entorno rnaseq_map
+conda deactivate
+</code></pre>
+</div></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org09b08d7">
+<h2 id="org09b08d7">Instalación de librerias en <code>R</code></h2>
+<div class="outline-text-2" id="text-org09b08d7">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1ce2703" class="stretch">
+<h3 id="org1ce2703">Instalación de <code>bioconductor</code></h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org651bfa2">
+<blockquote >
+<p>
+<code>bioconductor</code> es un repositorio de paquetes (<i>librerias</i>) orientados al análisis bioinformático.
+</p>
+</blockquote>
+
+<ul>
+<li>La versión a instalarse depende de la versión de <code>R</code> (<code>r-base</code>) que se tenga instalada</li>
+<li>Aún así es posible que algunas librerias no puedan ser instaladas</li>
+<li><p>
+En una sesión de R (<code>rnaseq_r</code>) ejecutar
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="R" >## Instalar Bioconductor (Nota la versión)
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.18")
+
+## Crear una lista de librerias a instalar
+ipackages &lt;- c("DESeq2","vsn", "ggplot2","tidyverse","devtools", "ballgown", "genefilter")
+## Instalar la lista con el administrador de paquetes de Bioconductor
+BiocManager::install(ipackages)
+</code></pre>
+</div></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org052b16c" class="stretch">
+<h3 id="org052b16c">Solución de problemas</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgc0c42c3">
+<blockquote >
+<p>
+El 26 de abril 2024 se publicó una nueva versión de la librería <code>MASS</code> la cual requiere la versión de <code>R</code> <code>=&gt;4.4.0</code>. Sin embargo la versión más actual que se encuentra en anaconda es <code>4.3.0</code>. Como esta librería es requerida es necesario instalar una versión anterior (Incluidas otras dependencias)
+</p>
+</blockquote>
+<ul>
+<li>Obtener la dirección <code>url</code> de una versión anterior y específica de la librería (<code>lbr</code>)
+<ul>
+<li>Buscar la librería (por nombre): <a href="https://cran.r-project.org/web/packages/available_packages_by_name.html">https://cran.r-project.org/web/packages/available_packages_by_name.html</a></li>
+<li>Buscar la versión en:  <a href="https://cran.r-project.org/src/contrib/Archive/lbr">https://cran.r-project.org/src/contrib/Archive/lbr</a>
+<ul>
+<li>Ej. <a href="https://cran.r-project.org/src/contrib/Archive/MASS">https://cran.r-project.org/src/contrib/Archive/MASS</a></li>
+
+</ul></li>
+
+</ul></li>
+<li>Para solucionar el problema anterior es necesario instalar las siguientes librerías:</li>
+
+</ul>
+<ul class="dFlex-row">
+<li>MASS</li>
+<li>Matrix</li>
+<li>lattice</li>
+
+</ul>
+
+</div>
+</section>
+<section id="slide-org3fb8586" class="stretch">
+<h4 id="org3fb8586">Instalación de paquetes antiguos en R</h4>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org866fb4c">
+<ul>
+<li>En una sesión de R ejecutar el siguiente comando especificando la librería (<code>&lt;libreria&gt;</code>) y la versión (<code>&lt;version&gt;</code>) a instalar</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre   ><code class="R" >lbr_url="https://cran.r-project.org/src/contrib/Archive/&lt;libreria&gt;/&lt;libreria&gt;_&lt;version&gt;.tar.gz"
+install.packages(lbr_url, repos=NULL, type="source")
+</code></pre>
+</div>
+<ul>
+<li>Para simplificar en caso de varias librerías</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre   ><code class="R" >librerias &lt;- c("https://cran.r-project.org/src/contrib/Archive/MASS/MASS_7.3-60.0.1.tar.gz",
+               "https://cran.r-project.org/src/contrib/Archive/lattice/lattice_0.22-5.tar.gz",
+               "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz")
+for (lbr_url in librerias) {
+  install.packages(lbr_url, repos=NULL, type="source")
+}
+</code></pre>
+</div>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org05096a9">
+<h2 id="org05096a9">Verificar la instalación</h2>
+<div class="outline-text-2" id="text-org05096a9">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgdf8e7b1" class="stretch">
+<h3 id="orgdf8e7b1">Confirmar que los programas y librerias están disponibles</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgd4531ab">
+<ul>
+<li><p>
+En la linea de comandos activar el entorno y listar un programa determinado
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="bash" >conda activate rnaseq_map
+# Hacer una lista de paquetes y buscar 'subread' [Existe]
+conda list | grep subread
+
+# Hacer una lista de paquetes y buscar 'bowtie2' [NO Existe]
+conda list | grep bowtie2
+</code></pre>
+</div></li>
+
+<li><p>
+En una sesión de <code>R</code> cargar las librerias
+</p>
+<div class="org-src-container">
+
+<pre   ><code class="R" >## Cargar la libreria 'MASS' [Existe]
+library("MASS")
+
+## Cargar la libreria 'biomaRt' [NO Existe]
+library("biomaRt")
+
+## Verificar la versión de la libreria MASS
+packageVersion("MASS")
+</code></pre>
+</div></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org3b81cec" class="stretch">
+<h2 id="org3b81cec">Recursos en línea</h2>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org1a81d31">
+<ul>
+<li>Bioconductor: <a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a></li>
+<li>Anaconda
+<ul>
+<li>Administración de canales: <a href="https://docs.anaconda.com/free/navigator/tutorials/manage-channels/">https://docs.anaconda.com/free/navigator/tutorials/manage-channels/</a></li>
+<li>Bioconda: <a href="https://bioconda.github.io/">https://bioconda.github.io/</a></li>
+<li>Conda-Forge: <a href="https://conda-forge.org/">https://conda-forge.org/</a></li>
+
+</ul></li>
+<li>R
+<ul>
+<li>Instalar paquetes antiguos R: <a href="https://stackoverflow.com/questions/17082341/installing-older-version-of-r-package#17082609">https://stackoverflow.com/questions/17082341/installing-older-version-of-r-package#17082609</a></li>
+
+</ul></li>
+
+</ul>
+
+</div>
+</section>
+</section>
+</div>
+</div>
+<p>Creado por ssl</p>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="./plugin_extra/menu/menu.js"></script>
+<script src="./plugin_extra/customcontrols/plugin.js"></script>
+<script src="./plugin_extra/pointer/pointer.js"></script>
+<script src="./plugin_extra/drawer/drawer.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealNotes, RevealZoom, RevealHighlight, RevealMenu, RevealCustomControls, RevealPointer, RevealDrawer],
+width:1200, height:800, minScale:0.2, maxScale:2.5, transition: 'fade', progress:true, history:true, center:true, mouseWheel:false, menu:{themes:true, themesPath:'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/', transitions:true, markers:true, custom: false, hideMissingTitles:true}, customcontrols:{controls:[{id:'toggle-overview', title:'Toggleoverview(O)', icon:'<i class="fa fa-th"></i>', action:'Reveal.toggleOverview();'}, {icon:'<i class="fa fa-message"></i>', title:'Toggle iframe legend', action:'ilegend()'}]}, pointer: {key: "q", color: "red", pointerSize: 16, alwaysVisible: false, tailLength: 10}
+});
+
+</script>
+<script src="./personal/js/icustom.js"></script>
+</body>
+</html>
