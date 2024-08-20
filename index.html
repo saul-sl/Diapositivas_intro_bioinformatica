@@ -21,8 +21,19 @@
 
 <link rel="stylesheet" href="./plugin_extra/pointer/pointer.css"/>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/zenburn.css"/><meta name="description" content="Instalación de programas">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+
+<!-- If the query includes 'print-pdf', include the PDF print sheet -->
+<script>
+    if( window.location.search.match( /print-pdf/gi ) ) {
+        var link = document.createElement( 'link' );
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/css/print/pdf.css';
+        document.getElementsByTagName( 'head' )[0].appendChild( link );
+    }
+</script>
+<meta name="description" content="Instalación de programas">
 </head>
 <body>
 <div class="reveal">
@@ -31,16 +42,16 @@
 <h2 class="author">Saul Sotomayor Leyton</h2><h2 class="date">2024-05-01</h2>
 </section>
 <section>
-<section id="slide-orgabb3f16">
-<h2 id="orgabb3f16">Contenido</h2>
-<div class="outline-text-2" id="text-orgabb3f16">
+<section id="slide-org52ab818">
+<h2 id="org52ab818">Contenido</h2>
+<div class="outline-text-2" id="text-org52ab818">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org68f0e4a" class="stretch">
-<h3 id="org68f0e4a">Contenido</h3>
-<div class="content-size dFlex-evenly dFlex-col" id="orga0d9be4">
+<section id="slide-orgaf5884d" class="stretch">
+<h3 id="orgaf5884d">Contenido</h3>
+<div class="content-size dFlex-evenly dFlex-col" id="orgf313632">
 <ul>
 <li>Instalación de miniconda
 <ul>
@@ -71,16 +82,16 @@
 </section>
 </section>
 <section>
-<section id="slide-orgac2c5fb">
-<h2 id="orgac2c5fb">Anaconda y miniconda</h2>
-<div class="outline-text-2" id="text-orgac2c5fb">
+<section id="slide-org88ed63e">
+<h2 id="org88ed63e">Anaconda y miniconda</h2>
+<div class="outline-text-2" id="text-org88ed63e">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org776ea14" class="stretch">
-<h3 id="org776ea14">Descripción</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="org066fe1b">
+<section id="slide-org2d1b975" class="stretch">
+<h3 id="org2d1b975">Descripción</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org6a26bda">
 <blockquote >
 <p>
 <code>Anaconda</code> es una distribución de los lenguajes <code>Python</code> y <code>R</code> para  aplicaciones  científicas/investigación <i>e.g.</i>, ciencia de datos, machine learning o bioinformática. El último mediante la adición de  fuentes (<i>canales</i>) específicos
@@ -99,9 +110,9 @@
 </section>
 </section>
 <section>
-<section id="slide-orga261667" class="stretch">
-<h3 id="orga261667">Instalación</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="org3f15134">
+<section id="slide-org84673ca" class="stretch">
+<h3 id="org84673ca">Instalación</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org4403692">
 <blockquote >
 <p>
 Instrucciones [Inglés]
@@ -118,16 +129,16 @@ Instrucciones [Inglés]
 </section>
 </section>
 <section>
-<section id="slide-org096c94e">
-<h2 id="org096c94e">Creación de entornos virtuales</h2>
-<div class="outline-text-2" id="text-org096c94e">
+<section id="slide-org88e8952">
+<h2 id="org88e8952">Creación de entornos virtuales</h2>
+<div class="outline-text-2" id="text-org88e8952">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org04c404f" class="stretch">
-<h3 id="org04c404f">Descripción</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="org8983b49">
+<section id="slide-orgf707a2c" class="stretch">
+<h3 id="orgf707a2c">Descripción</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgb5967d5">
 <blockquote >
 <p>
 Un entorno virtual puede ser definido como un directorio que aísla una instalación particular de Python incluidas sus dependencias y paquetes asociados
@@ -148,9 +159,9 @@ Un entorno virtual puede ser definido como un directorio que aísla una instalac
 </section>
 </section>
 <section>
-<section id="slide-org6387ab3" class="stretch">
-<h3 id="org6387ab3">Canales de paquetes</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="orga07c357">
+<section id="slide-orgd93f238" class="stretch">
+<h3 id="orgd93f238">Canales de paquetes</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org3037b48">
 <blockquote >
 <p>
 Un <i>canal</i> indica al administrador de paquetes el lugar donde encontrar librerias/programas. Un ejemplo es el canal <code>bioconda</code> el cual almacena paquetes relacionados a las ciencias biomédicas. Otro es <code>conda-forge</code> el cual está dirigido por la comunidad de usuarios 
@@ -163,13 +174,13 @@ Un <i>canal</i> indica al administrador de paquetes el lugar donde encontrar lib
 </ul>
 <div class="org-src-container">
 
-<pre   ><code class="bash" ># Añade el canal por defecto (defaults) a la lista de canales
+<pre  class="src src-bash"   ><code trim><span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">A&#241;ade el canal por defecto (defaults) a la lista de canales</span>
 conda config --add channels defaults
 
-# Añade el canal bioconda a la lista de canales
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">A&#241;ade el canal bioconda a la lista de canales</span>
 conda config --add channels bioconda
 
-# Añade el canal conda-forge a la lista de canales
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">A&#241;ade el canal conda-forge a la lista de canales</span>
 conda config --add channels conda-forge
 </code></pre>
 </div>
@@ -178,9 +189,9 @@ conda config --add channels conda-forge
 </section>
 </section>
 <section>
-<section id="slide-org6a7112a" class="stretch">
-<h3 id="org6a7112a">Creación de entornos virtuales</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="orgcccdfdb">
+<section id="slide-orgf139787" class="stretch">
+<h3 id="orgf139787">Creación de entornos virtuales</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org00254c3">
 <ul>
 <li>Se crearán 2 entornos,
 <ul>
@@ -194,48 +205,48 @@ conda config --add channels conda-forge
 </ul>
 <div class="org-src-container">
 
-<pre   ><code class="bash" ># Creación del entorno mi_entorno
-conda create --name mi_entorno python=3.x -y
+<pre  class="src src-bash"   ><code trim><span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Creaci&#243;n del entorno mi_entorno</span>
+conda create --name mi_entorno <span style="color: #007faa;">python</span>=3.x -y
 
-# Activar el entorno
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Activar el entorno</span>
 conda activate mi_entorno
 
-# Instalación de paquetes desde un canal específico
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Instalaci&#243;n de paquetes desde un canal espec&#237;fico</span>
 conda install -c mi_canal mi_paquete -y
 </code></pre>
 </div>
 
 </div>
 </section>
-<section id="slide-org486a6ea" class="stretch">
-<h4 id="org486a6ea">Creación de entornos virtuales (Cont.)</h4>
-<div class="content-size dFlex-centered text-md dFlex-col" id="org9c6c5a9">
+<section id="slide-org620f03a" class="stretch">
+<h4 id="org620f03a">Creación de entornos virtuales (Cont.)</h4>
+<div class="content-size dFlex-centered text-md dFlex-col" id="org278aa70">
 <ul>
 <li><p>
 En la línea de comandos ejecutar:
 </p>
 <div class="org-src-container">
 
-<pre   ><code class="bash" ># Creación del entorno rnaseq_map y activación
-conda create --name rnaseq_map python=3.11 -y
+<pre  class="src src-bash"   ><code trim><span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Creaci&#243;n del entorno rnaseq_map y activaci&#243;n</span>
+conda create --name rnaseq_map <span style="color: #007faa;">python</span>=3.11 -y
 conda activate rnaseq_map
 
-# Instalación de paquetes
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Instalaci&#243;n de paquetes</span>
 conda install -c conda-forge pigz -y
 conda install -c bioconda entrez-direct fastqc fastp stringtie gffcompare hisat2 subread samtools -y
 
-# Desactivar el entorno rnaseq_map
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Desactivar el entorno rnaseq_map</span>
 conda deactivate
 
-# Creación del entorno rnaseq_r y activación
-conda create --name rnaseq_r python=3.11 -y
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Creaci&#243;n del entorno rnaseq_r y activaci&#243;n</span>
+conda create --name rnaseq_r <span style="color: #007faa;">python</span>=3.11 -y
 conda activate rnaseq_r
 
-# Instalación de paquetes
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Instalaci&#243;n de paquetes</span>
 conda install -c anaconda libxml2 -y
-conda install -c conda-forge pkg-config=0.29.2 r-curl=5.1.0 r-base=4.3.3 -y
+conda install -c conda-forge pkg-config=0.29.2 r-curl=5.2.1 r-base=4.4.1 -y
 
-# Desactivar el entorno rnaseq_map
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Desactivar el entorno rnaseq_map</span>
 conda deactivate
 </code></pre>
 </div></li>
@@ -246,16 +257,16 @@ conda deactivate
 </section>
 </section>
 <section>
-<section id="slide-org09b08d7">
-<h2 id="org09b08d7">Instalación de librerias en <code>R</code></h2>
-<div class="outline-text-2" id="text-org09b08d7">
+<section id="slide-org02e6cb4">
+<h2 id="org02e6cb4">Instalación de librerias en <code>R</code></h2>
+<div class="outline-text-2" id="text-org02e6cb4">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-org1ce2703" class="stretch">
-<h3 id="org1ce2703">Instalación de <code>bioconductor</code></h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="org651bfa2">
+<section id="slide-org2225703" class="stretch">
+<h3 id="org2225703">Instalación de <code>bioconductor</code></h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org363416b">
 <blockquote >
 <p>
 <code>bioconductor</code> es un repositorio de paquetes (<i>librerias</i>) orientados al análisis bioinformático.
@@ -270,14 +281,14 @@ En una sesión de R (<code>rnaseq_r</code>) ejecutar
 </p>
 <div class="org-src-container">
 
-<pre   ><code class="R" >## Instalar Bioconductor (Nota la versión)
-if (!require("BiocManager", quietly = TRUE))
-  install.packages("BiocManager")
-BiocManager::install(version = "3.18")
+<pre  class="src src-R"   ><code trim><span style="color: #92454f; font-style: italic;">## </span><span style="color: #92454f; font-style: italic;">Instalar Bioconductor (Nota la versi&#243;n)</span>
+<span style="color: #aa0010; font-weight: bold;">if</span> (!<span style="color: #c50f4f;">require</span>(<span style="color: #2070af;">"BiocManager"</span>, quietly = <span style="color: #2f5faf;">TRUE</span>))
+  install.packages(<span style="color: #2070af;">"BiocManager"</span>)
+BiocManager::install(version = <span style="color: #2070af;">"3.19"</span>)
 
-## Crear una lista de librerias a instalar
-ipackages &lt;- c("DESeq2","vsn", "ggplot2","tidyverse","devtools", "ballgown", "genefilter")
-## Instalar la lista con el administrador de paquetes de Bioconductor
+<span style="color: #92454f; font-style: italic;">## </span><span style="color: #92454f; font-style: italic;">Crear una lista de librerias a instalar</span>
+ipackages <span style="color: #c50f4f;">&lt;-</span> c(<span style="color: #2070af;">"DESeq2"</span>,<span style="color: #2070af;">"vsn"</span>, <span style="color: #2070af;">"ggplot2"</span>,<span style="color: #2070af;">"tidyverse"</span>,<span style="color: #2070af;">"devtools"</span>, <span style="color: #2070af;">"ballgown"</span>, <span style="color: #2070af;">"genefilter"</span>)
+<span style="color: #92454f; font-style: italic;">## </span><span style="color: #92454f; font-style: italic;">Instalar la lista con el administrador de paquetes de Bioconductor</span>
 BiocManager::install(ipackages)
 </code></pre>
 </div></li>
@@ -286,16 +297,24 @@ BiocManager::install(ipackages)
 
 </div>
 </section>
-</section>
-<section>
-<section id="slide-org052b16c" class="stretch">
-<h3 id="org052b16c">Solución de problemas</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="orgc0c42c3">
+<section id="slide-org2e5dced" class="stretch">
+<h4 id="org2e5dced">Solución de problemas</h4>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org374fd5e">
 <blockquote >
 <p>
-El 26 de abril 2024 se publicó una nueva versión de la librería <code>MASS</code> la cual requiere la versión de <code>R</code> <code>=&gt;4.4.0</code>. Sin embargo la versión más actual que se encuentra en anaconda es <code>4.3.0</code>. Como esta librería es requerida es necesario instalar una versión anterior (Incluidas otras dependencias)
+El 26 de abril 2024 se publicó una nueva versión de la librería <code>MASS</code> la cual requiere la versión de <code>R</code> <code>=&gt;4.4.0</code>. Sin embargo la versión más actual que se encontraba en anaconda era <code>4.3.0</code>. Como esta librería es requerida fue necesario instalar una versión anterior (Incluidas otras dependencias).
+</p>
+
+<p>
+Actualmente (Agosto 2024) está disponible la versión de <code>R=4.4.1</code> por lo que no es necesario instalar una versión antigua de las librerias anteriores sin embargo, creo que el saber como instalar paquetes antiguos puede ser de utilidad
 </p>
 </blockquote>
+
+</div>
+</section>
+<section id="slide-org3e3e73b" class="stretch">
+<h4 id="org3e3e73b">Instalación de paquetes antiguos en R</h4>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgc1b33d5">
 <ul>
 <li>Obtener la dirección <code>url</code> de una versión anterior y específica de la librería (<code>lbr</code>)
 <ul>
@@ -319,17 +338,17 @@ El 26 de abril 2024 se publicó una nueva versión de la librería <code>MASS</c
 
 </div>
 </section>
-<section id="slide-org3fb8586" class="stretch">
-<h4 id="org3fb8586">Instalación de paquetes antiguos en R</h4>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="org866fb4c">
+<section id="slide-org84d8463" class="stretch">
+<h4 id="org84d8463">Instalación de paquetes antiguos en R</h4>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgc3c06dd">
 <ul>
 <li>En una sesión de R ejecutar el siguiente comando especificando la librería (<code>&lt;libreria&gt;</code>) y la versión (<code>&lt;version&gt;</code>) a instalar</li>
 
 </ul>
 <div class="org-src-container">
 
-<pre   ><code class="R" >lbr_url="https://cran.r-project.org/src/contrib/Archive/&lt;libreria&gt;/&lt;libreria&gt;_&lt;version&gt;.tar.gz"
-install.packages(lbr_url, repos=NULL, type="source")
+<pre  class="src src-R"   ><code trim>lbr_url=<span style="color: #2070af;">"https://cran.r-project.org/src/contrib/Archive/&lt;libreria&gt;/&lt;libreria&gt;_&lt;version&gt;.tar.gz"</span>
+install.packages(lbr_url, repos=<span style="color: #2f5faf;">NULL</span>, type=<span style="color: #2070af;">"source"</span>)
 </code></pre>
 </div>
 <ul>
@@ -338,11 +357,11 @@ install.packages(lbr_url, repos=NULL, type="source")
 </ul>
 <div class="org-src-container">
 
-<pre   ><code class="R" >librerias &lt;- c("https://cran.r-project.org/src/contrib/Archive/MASS/MASS_7.3-60.0.1.tar.gz",
-               "https://cran.r-project.org/src/contrib/Archive/lattice/lattice_0.22-5.tar.gz",
-               "https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz")
-for (lbr_url in librerias) {
-  install.packages(lbr_url, repos=NULL, type="source")
+<pre  class="src src-R"   ><code trim>librerias <span style="color: #c50f4f;">&lt;-</span> c(<span style="color: #2070af;">"https://cran.r-project.org/src/contrib/Archive/MASS/MASS_7.3-60.0.1.tar.gz"</span>,
+               <span style="color: #2070af;">"https://cran.r-project.org/src/contrib/Archive/lattice/lattice_0.22-5.tar.gz"</span>,
+               <span style="color: #2070af;">"https://cran.r-project.org/src/contrib/Archive/Matrix/Matrix_1.6-5.tar.gz"</span>)
+<span style="color: #aa0010; font-weight: bold;">for</span> (lbr_url <span style="color: #aa0010; font-weight: bold;">in</span> librerias) {
+  install.packages(lbr_url, repos=<span style="color: #2f5faf;">NULL</span>, type=<span style="color: #2070af;">"source"</span>)
 }
 </code></pre>
 </div>
@@ -351,27 +370,27 @@ for (lbr_url in librerias) {
 </section>
 </section>
 <section>
-<section id="slide-org05096a9">
-<h2 id="org05096a9">Verificar la instalación</h2>
-<div class="outline-text-2" id="text-org05096a9">
+<section id="slide-orgcd41fa8">
+<h2 id="orgcd41fa8">Verificar la instalación</h2>
+<div class="outline-text-2" id="text-orgcd41fa8">
 </div>
 </section>
 </section>
 <section>
-<section id="slide-orgdf8e7b1" class="stretch">
-<h3 id="orgdf8e7b1">Confirmar que los programas y librerias están disponibles</h3>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="orgd4531ab">
+<section id="slide-orgf612f98" class="stretch">
+<h3 id="orgf612f98">Confirmar que los programas y librerias están disponibles</h3>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="orgb894d0a">
 <ul>
 <li><p>
 En la linea de comandos activar el entorno y listar un programa determinado
 </p>
 <div class="org-src-container">
 
-<pre   ><code class="bash" >conda activate rnaseq_map
-# Hacer una lista de paquetes y buscar 'subread' [Existe]
+<pre  class="src src-bash"   ><code trim>conda activate rnaseq_map
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Hacer una lista de paquetes y buscar 'subread' [Existe]</span>
 conda list | grep subread
 
-# Hacer una lista de paquetes y buscar 'bowtie2' [NO Existe]
+<span style="color: #92454f; font-style: italic;"># </span><span style="color: #92454f; font-style: italic;">Hacer una lista de paquetes y buscar 'bowtie2' [NO Existe]</span>
 conda list | grep bowtie2
 </code></pre>
 </div></li>
@@ -381,14 +400,14 @@ En una sesión de <code>R</code> cargar las librerias
 </p>
 <div class="org-src-container">
 
-<pre   ><code class="R" >## Cargar la libreria 'MASS' [Existe]
-library("MASS")
+<pre  class="src src-R"   ><code trim><span style="color: #92454f; font-style: italic;">## </span><span style="color: #92454f; font-style: italic;">Cargar la libreria 'MASS' [Existe]</span>
+<span style="color: #c50f4f;">library</span>(<span style="color: #2070af;">"MASS"</span>)
 
-## Cargar la libreria 'biomaRt' [NO Existe]
-library("biomaRt")
+<span style="color: #92454f; font-style: italic;">## </span><span style="color: #92454f; font-style: italic;">Cargar la libreria 'biomaRt' [NO Existe]</span>
+<span style="color: #c50f4f;">library</span>(<span style="color: #2070af;">"biomaRt"</span>)
 
-## Verificar la versión de la libreria MASS
-packageVersion("MASS")
+<span style="color: #92454f; font-style: italic;">## </span><span style="color: #92454f; font-style: italic;">Verificar la versi&#243;n de la libreria MASS</span>
+packageVersion(<span style="color: #2070af;">"MASS"</span>)
 </code></pre>
 </div></li>
 
@@ -398,9 +417,9 @@ packageVersion("MASS")
 </section>
 </section>
 <section>
-<section id="slide-org3b81cec" class="stretch">
-<h2 id="org3b81cec">Recursos en línea</h2>
-<div class="content-size dFlex-evenly text-md dFlex-col" id="org1a81d31">
+<section id="slide-org1f9b555" class="stretch">
+<h2 id="org1f9b555">Recursos en línea</h2>
+<div class="content-size dFlex-evenly text-md dFlex-col" id="org7c15ef6">
 <ul>
 <li>Bioconductor: <a href="https://www.bioconductor.org/">https://www.bioconductor.org/</a></li>
 <li>Anaconda
@@ -425,21 +444,24 @@ packageVersion("MASS")
 </div>
 <p>Creado por ssl</p>
 <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom/zoom.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
 <script src="./plugin_extra/menu/menu.js"></script>
 <script src="./plugin_extra/customcontrols/plugin.js"></script>
-<script src="./plugin_extra/pointer/pointer.js"></script>
 <script src="./plugin_extra/drawer/drawer.js"></script>
-
+<script src="./plugin_extra/pointer/pointer.js"></script>
 
 <script>
 // Full list of configuration options available here:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
-plugins: [RevealNotes, RevealZoom, RevealHighlight, RevealMenu, RevealCustomControls, RevealPointer, RevealDrawer],
-width:1200, height:800, minScale:0.2, maxScale:2.5, transition: 'fade', progress:true, history:true, center:true, mouseWheel:false, menu:{themes:true, themesPath:'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/', transitions:true, markers:true, custom: false, hideMissingTitles:true}, customcontrols:{controls:[{id:'toggle-overview', title:'Toggleoverview(O)', icon:'<i class="fa fa-th"></i>', action:'Reveal.toggleOverview();'}, {icon:'<i class="fa fa-message"></i>', title:'Toggle iframe legend', action:'ilegend()'}]}, pointer: {key: "q", color: "red", pointerSize: 16, alwaysVisible: false, tailLength: 10}
+width:1200, height:800, minScale:0.2, maxScale:2.5, transition: 'fade', progress:true, history:true, center:true, mouseWheel:false, menu:{themes:true, themesPath:'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/', transitions:true, markers:true, custom: false, hideMissingTitles:true}, customcontrols:{controls:[{id:'toggle-overview', title:'Toggleoverview(O)', icon:'<i class="fa fa-th"></i>', action:'Reveal.toggleOverview();'}, {icon:'<i class="fa fa-message"></i>', title:'Toggle iframe legend', action:'ilegend()'}]}, pointer: {key: "q", color: "red", pointerSize: 16, alwaysVisible: false, tailLength: 10}, plugins: [ RevealMenu, RevealCustomControls, RevealPointer, RevealDrawer ],
+
+// Optional libraries used to extend on reveal.js
+dependencies: [
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+ { src: 'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }]
+
 });
 
 </script>

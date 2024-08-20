@@ -7,16 +7,17 @@
 #+MACRO: class #+ATTR_HTML: :class $1
 #+MACRO: html #+REVEAL_HTML: $1
 
-#+options: timestamp:nil ^:{}
 #+Title: Tarea 1: Instalación de programas
 #+Author: Saul Sotomayor Leyton
 #+Date: 2024-05-01
 
 #+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js@5.1.0
+#+REVEAL_INIT_OPTIONS: width:1200, height:800, minScale:0.2, maxScale:2.5, transition: 'fade', progress:true, history:true, center:true, mouseWheel:false, menu:{themes:true, themesPath:'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/', transitions:true, markers:true, custom: false, hideMissingTitles:true}, customcontrols:{controls:[{id:'toggle-overview', title:'Toggleoverview(O)', icon:'<i class="fa fa-th"></i>', action:'Reveal.toggleOverview();'}, {icon:'<i class="fa fa-message"></i>', title:'Toggle iframe legend', action:'ilegend()'}]}, pointer: {key: "q", color: "red", pointerSize: 16, alwaysVisible: false, tailLength: 10}, plugins: [ RevealMenu, RevealCustomControls, RevealPointer, RevealDrawer ]
+
+#+OPTIONS: timestamp:nil ^:{} num:nil toc:nil
 #+REVEAL_HLEVEL: 2
 #+REVEAL_HEAD_PREAMBLE: <meta name="description" content="Instalación de programas">
 #+REVEAL_POSTAMBLE: <p>Creado por ssl</p>
-#+REVEAL_INIT_OPTIONS: width:1200, height:800, minScale:0.2, maxScale:2.5, transition: 'fade', progress:true, history:true, center:true, mouseWheel:false, menu:{themes:true, themesPath:'https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/', transitions:true, markers:true, custom: false, hideMissingTitles:true}, customcontrols:{controls:[{id:'toggle-overview', title:'Toggleoverview(O)', icon:'<i class="fa fa-th"></i>', action:'Reveal.toggleOverview();'}, {icon:'<i class="fa fa-message"></i>', title:'Toggle iframe legend', action:'ilegend()'}]}, pointer: {key: "q", color: "red", pointerSize: 16, alwaysVisible: false, tailLength: 10}
 #+REVEAL_THEME: dracula
 #+OPTIONS: num:nil toc:nil
 
@@ -24,12 +25,18 @@
 #+REVEAL_EXTRA_CSS: ./personal/css/icustom.css
 #+REVEAL_EXTRA_CSS: ./plugin_extra/drawer/drawer.css
 #+REVEAL_EXTRA_CSS: ./plugin_extra/pointer/pointer.css
-#+REVEAL_EXTRA_CSS: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
-#+REVEAL_EXTERNAL_PLUGINS: (RevealMenu . "./plugin_extra/menu/menu.js") 
-#+REVEAL_EXTERNAL_PLUGINS: (RevealCustomControls . "./plugin_extra/customcontrols/plugin.js")
-#+REVEAL_EXTERNAL_PLUGINS: (RevealDrawer . "./plugin_extra/drawer/drawer.js")
-#+REVEAL_EXTERNAL_PLUGINS: (RevealPointer . "./plugin_extra/pointer/pointer.js")
-#+REVEAL_PLUGINS: (notes zoom highlight RevealMenu RevealCustomControls RevealPointer RevealDrawer)
+#+REVEAL_EXTRA_CSS: https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css
+
+# #+REVEAL_EXTERNAL_PLUGINS: (RevealMenu . "./plugin_extra/menu/menu.js") 
+# #+REVEAL_EXTERNAL_PLUGINS: (RevealCustomControls . "./plugin_extra/customcontrols/plugin.js")
+# #+REVEAL_EXTERNAL_PLUGINS: (RevealDrawer . "./plugin_extra/drawer/drawer.js")
+# #+REVEAL_EXTERNAL_PLUGINS: (RevealPointer . "./plugin_extra/pointer/pointer.js")
+# #+REVEAL_PLUGINS: (notes zoom highlight RevealMenu RevealCustomControls RevealPointer RevealDrawer)
+#+REVEAL_EXTRA_SCRIPT_BEFORE_SRC: ./plugin_extra/menu/menu.js 
+#+REVEAL_EXTRA_SCRIPT_BEFORE_SRC: ./plugin_extra/customcontrols/plugin.js
+#+REVEAL_EXTRA_SCRIPT_BEFORE_SRC: ./plugin_extra/drawer/drawer.js
+#+REVEAL_EXTRA_SCRIPT_BEFORE_SRC: ./plugin_extra/pointer/pointer.js
+
 #+REVEAL_EXTRA_SCRIPT_SRC: ./personal/js/icustom.js
 * Contenido
 ** Contenido
@@ -163,7 +170,7 @@ Un /canal/ indica al administrador de paquetes el lugar donde encontrar libreria
 
     # Instalación de paquetes
     conda install -c anaconda libxml2 -y
-    conda install -c conda-forge pkg-config=0.29.2 r-curl=5.1.0 r-base=4.3.3 -y
+    conda install -c conda-forge pkg-config=0.29.2 r-curl=5.2.1 r-base=4.4.1 -y
 
     # Desactivar el entorno rnaseq_map
     conda deactivate
@@ -187,7 +194,7 @@ Un /canal/ indica al administrador de paquetes el lugar donde encontrar libreria
     ## Instalar Bioconductor (Nota la versión)
     if (!require("BiocManager", quietly = TRUE))
       install.packages("BiocManager")
-    BiocManager::install(version = "3.18")
+    BiocManager::install(version = "3.19")
 
     ## Crear una lista de librerias a instalar
     ipackages <- c("DESeq2","vsn", "ggplot2","tidyverse","devtools", "ballgown", "genefilter")
@@ -195,15 +202,24 @@ Un /canal/ indica al administrador de paquetes el lugar donde encontrar libreria
     BiocManager::install(ipackages)
   #+end_src
 #+end_dFlex-col
-** Solución de problemas
+*** Solución de problemas
 :PROPERTIES:
 :REVEAL_EXTRA_ATTR: class="stretch"
 :END:
 #+ATTR_HTML: :class content-size dFlex-evenly text-md
 #+begin_dFlex-col
 #+begin_quote
-El 26 de abril 2024 se publicó una nueva versión de la librería =MASS= la cual requiere la versión de =R= ==>4.4.0=. Sin embargo la versión más actual que se encuentra en anaconda es =4.3.0=. Como esta librería es requerida es necesario instalar una versión anterior (Incluidas otras dependencias)
+El 26 de abril 2024 se publicó una nueva versión de la librería =MASS= la cual requiere la versión de =R= ==>4.4.0=. Sin embargo la versión más actual que se encontraba en anaconda era =4.3.0=. Como esta librería es requerida fue necesario instalar una versión anterior (Incluidas otras dependencias).
+
+Actualmente (Agosto 2024) está disponible la versión de ~R=4.4.1~ por lo que no es necesario instalar una versión antigua de las librerias anteriores sin embargo, creo que el saber como instalar paquetes antiguos puede ser de utilidad
 #+end_quote
+#+end_dFlex-col
+*** Instalación de paquetes antiguos en R
+:PROPERTIES:
+:REVEAL_EXTRA_ATTR: class="stretch"
+:END:
+#+ATTR_HTML: :class content-size dFlex-evenly text-md
+#+begin_dFlex-col
 - Obtener la dirección =url= de una versión anterior y específica de la librería (=lbr=)
   - Buscar la librería (por nombre): https://cran.r-project.org/web/packages/available_packages_by_name.html
   - Buscar la versión en:  https://cran.r-project.org/src/contrib/Archive/lbr
